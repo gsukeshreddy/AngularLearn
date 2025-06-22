@@ -1,13 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { ProductListComponent } from '../../../../shared/components/product-list-component/product-list-component';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product-service';
 
 @Component({
   selector: 'app-product-list-page',
-  imports: [],
+  imports: [ProductListComponent],
   templateUrl: './product-list-page.html',
   styleUrl: './product-list-page.css',
 })
 export class ProductListPage implements OnInit {
+  products = signal<Product[]>([]);
+  constructor(private productService: ProductService) {}
+
   ngOnInit(): void {
-    console.log('Productlist page is initialized');
+    this.productService.getAllProducts().subscribe((data) => {
+      this.products.set(data);
+    });
   }
 }
