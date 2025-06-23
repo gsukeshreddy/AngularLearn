@@ -15,6 +15,9 @@
 ></app-products-carousel-component>
 
 <!-- Product Grid -->
-<app-product-list-home-component
+<app-product-list-component
   [productList]="productsList()"
-></app-product-list-home-component>
+  (addToCart)="addToCart($event)"
+  (removedFromCart)="removeFromCart($event)"
+  [displaySimpleDetails]="true"
+></app-product-list-component>

@@ -1,3 +1,5 @@
 <app-product-list-component
   [productList]="products()"
+  (addToCart)="addToCart($event)"
+  (removedFromCart)="removeFromCart($event)"
 ></app-product-list-component>
