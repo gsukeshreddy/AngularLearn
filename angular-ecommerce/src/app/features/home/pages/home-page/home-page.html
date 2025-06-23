@@ -1,1 +1,20 @@
-<p>home-page works!</p>
+<!-- Hero Section -->
+<section class="py-5 text-center text-white bg-dark position-relative">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to StyleCart</h1>
+    <p class="lead">
+      Discover the best deals on fashion, electronics, and more.
+    </p>
+    <a class="btn btn-primary btn-lg mt-3" routerLink="/products">Shop Now</a>
+  </div>
+</section>
+
+<!-- Carousal -->
+<app-products-carousel-component
+  [productsList]="productsList()"
+></app-products-carousel-component>
+
+<!-- Product Grid -->
+<app-product-list-home-component
+  [productList]="productsList()"
+></app-product-list-home-component>
