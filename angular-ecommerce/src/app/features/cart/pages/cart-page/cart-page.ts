@@ -1,10 +1,11 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { Product } from '../../../product/models/product';
 import { CartService } from '../../services/cart-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './cart-page.html',
   styleUrl: './cart-page.css',
 })
