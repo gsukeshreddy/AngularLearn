@@ -32,7 +32,9 @@
     } @if(cartItems().length > 0) {
     <div class="text-end mt-3 mb-5">
       <h4>Total: ${{ getCartTotal() }}</h4>
-      <button class="btn btn-success">Proceed to Checkout</button>
+      <button routerLink="/checkout" class="btn btn-success">
+        Proceed to Checkout
+      </button>
     </div>
     }
   </div>

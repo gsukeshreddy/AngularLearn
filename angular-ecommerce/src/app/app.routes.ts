@@ -30,6 +30,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'checkout',
+    loadChildren: () =>
+      import('./features/checkout/checkout-routing-module').then(
+        (m) => m.CheckoutRoutingModule
+      ),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
